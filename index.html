@@ -29,11 +29,26 @@
         }
     </style>
 </head>
-<body>
+<body id="body">
     <div class="container">
     <h1>Background Color : <span id="span">White</span></h1>
-    <button onclick="red()" ondblclick="purple()" onmouseover="yellow()" onmousedown="blue()">click here</button>
+    <button onclick="changeColor()">click here</button>
 </div>
-<script src="script.js"></script>
+<script>
+let colors = ["crimson", "darkmagenta", "lightseagreen","Yellow","Purple","Plum","Palegreen","orchid","Teal","Blueviolet","Aqua","springgreen"];
+let span=document.getElementById("span");
+let colorIndex = 0;
+function changeColor() {
+let col = document.getElementById("body");
+if( colorIndex >= colors.length ) {
+    colorIndex = 0;
+}
+col.style.backgroundColor = colors[colorIndex];
+span.textContent=colors[colorIndex];
+colorIndex++;
+}
+</script>
 </body>
 </html>
+
+
